@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: favourite-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: favourite-api
+  template:
+    metadata:
+      labels:
+        app: favourite-api
+    spec:
+      containers:
+        - name: favourite-api
+          image: nica80/favourite_api
+          ports:
+            - containerPort: 9010
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: favourite-api
+spec:
+  ports:
+    - port: 8080
+  selector:
+    app: favourite-api
