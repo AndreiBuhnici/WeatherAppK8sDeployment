@@ -1,18 +1,18 @@
 {
     "/user/*":{
-        "target":"http://localhost:8090",
+        "target":"http://user-api-app:8090",
         "secure": false,
         "logLevel":"debug"
     },
     "/favApi/*":{
-        "target":"http://localhost:9010",
+        "target":"http://favourite-api:9010",
         "secure": false,
         "logLevel":"debug",
         "changeOrigin": true
 
     },
     "/weatherApi/*":{
-        "target":"http://localhost:8080",
+        "target":"http://api-capstone:8080",
         "secure": false,
         "logLevel":"debug"
     }
