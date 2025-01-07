@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: favourite-api
-          image: nica80/favourite_api
+          image: andreibuhnici/favourite_api
           ports:
             - containerPort: 9010
 ---
@@ -24,6 +24,6 @@ metadata:
   name: favourite-api
 spec:
   ports:
-    - port: 8080
+    - port: 9010
   selector:
     app: favourite-api

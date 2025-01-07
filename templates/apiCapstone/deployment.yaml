@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-capstone
-          image: nica80/api_capstone
+          image: andreibuhnici/api_capstone
           ports:
             - containerPort: 8080
 ---
