@@ -18,17 +18,33 @@ spec:
           ports:
             - containerPort: 4200
 ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   labels:
+#     app: frontend-app
+#   name: frontend-app
+# spec:
+#   ports:
+#   - port: 4200
+#     protocol: TCP
+#     targetPort: 4200
+#   selector:
+#     app: frontend-app
+#   type: NodePort
+
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: frontend-app
   name: frontend-app
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-security-groups: "sg-069543ec2b62eea2b" # control plane security group
 spec:
-  ports:
-  - port: 4200
-    protocol: TCP
-    targetPort: 4200
+  type: LoadBalancer
   selector:
     app: frontend-app
-  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 4200
+    targetPort: 4200
+

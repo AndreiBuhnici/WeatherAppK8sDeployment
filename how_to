@@ -4,8 +4,3 @@
 3. build docker image with Dockerfile(Dockerfile in current folder .): docker build -t {name}_api_weather .
 4. push docker image to cloud registry: docker tag {name}_api_weather {your_docker_registry}/{name}_api_weather ; docker push {your_docker_registry}/{name}_api_weather
 5. write kubernetes yaml files and run them with: kubectl apply -f .
-
-
-portainer:
-https://github.com/portainer/k8s
-port = 30779
